@@ -3,6 +3,7 @@ import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 import 'car_list_page.dart'; // Import Car List Page
 import 'sales_list_page.dart'; // Import Sales List Page
 import 'dealership_list_page.dart'; // Import Dealership List Page
+import 'customerListPage.dart'; // Import Customer List Page
 
 void main() {
   // Initialize sqflite_common_ffi for desktop or testing
@@ -25,9 +26,10 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         '/Main': (context) => const MyHomePage(title: 'Flutter Application Home'),
+        '/page1': (context) => const CustomerListPage(title: 'Customer List'), // Route for Customer List Page
         '/page2': (context) => CarListPage(), // Route for Car List Page
-        '/page3': (context) => const DealershipListPage(), // Route for Dealership List
-        '/page4': (context) => const SalesListPage(), // Route for Sales List
+        '/page3': (context) => const DealershipListPage(), // Route for Dealership List Page
+        '/page4': (context) => const SalesListPage(), // Route for Sales List Page
       },
       initialRoute: '/Main',
     );
@@ -70,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: ElevatedButton(
                 style: buttonStyle,
                 onPressed: () {
-                  Navigator.pushNamed(context, '/page1'); // Placeholder for Customer List
+                  Navigator.pushNamed(context, '/page1'); // Navigate to Customer List
                 },
                 child: const Text('Customer List'),
               ),
@@ -113,24 +115,6 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-// Placeholder Page for Customer List
-class PlaceholderPage extends StatelessWidget {
-  final String title;
-  const PlaceholderPage({super.key, required this.title});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: const Center(
-        child: Text('This is a placeholder page.'),
       ),
     );
   }
