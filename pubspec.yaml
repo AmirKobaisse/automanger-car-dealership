@@ -1,0 +1,28 @@
+name: car_list
+description: A Flutter project to manage a list of cars.
+
+publish_to: 'none' # Remove this line if you plan to publish your app
+
+version: 1.0.0+1
+environment:
+  sdk: ">=3.5.2 <4.0.0"  # Added SDK constraint
+
+dependencies:
+  flutter:
+    sdk: flutter
+  sqflite_common_ffi: ^2.0.0+1
+  path: ^1.8.0
+  sqflite: ^2.0.0+4
+  path_provider: ^2.0.14
+
+
+
+  flutter_secure_storage: ^5.0.2  # Add secure storage dependency
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
